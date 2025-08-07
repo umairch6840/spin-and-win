@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5;url=#spinner">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin & Win</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100vh;
+        }
+        #spinner {
+            display: none;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .wheel {
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            border: 10px solid #444;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .spin-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="blogspot">
+    <iframe src="https://newearningsitepk.blogspot.com/2025/05/get-free-money-online-use-ysense-to.html"></iframe>
+</div>
+
+<div id="spinner">
+    <h1>Spin & Win</h1>
+    <div class="wheel" id="wheel"></div>
+    <button class="spin-btn" onclick="spin()">Spin</button>
+    <p id="result"></p>
+</div>
+
+<script>
+    setTimeout(function () {
+        document.getElementById('blogspot').style.display = 'none';
+        document.getElementById('spinner').style.display = 'block';
+    }, 5000);
+
+    const prizes = ["10 Coins", "Try Again", "50 Coins", "20 Coins", "Spin Again", "100 Coins"];
+    let spinning = false;
+
+    function spin() {
+        if (spinning) return;
+        spinning = true;
+        const wheel = document.getElementById("wheel");
+        const result = document.getElementById("result");
+        const prizeIndex = Math.floor(Math.random() * prizes.length);
+        const prize = prizes[prizeIndex];
+        result.textContent = "Spinning...";
+        setTimeout(() => {
+            result.textContent = "You won: " + prize;
+            spinning = false;
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
